@@ -1,0 +1,12 @@
+{
+  "name": "agent-native-relay",
+  "version": "0.1.0",
+  "description": "WebSocket relay for Agent Native ↔ OpenClaw",
+  "main": "relay.js",
+  "scripts": {
+    "start": "node relay.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
