@@ -6,7 +6,7 @@ set -e
 
 # ── Parse args ──
 TOKEN=""
-RELAY="ws://127.0.0.1:8787"
+RELAY="wss://agent-native-relay.onrender.com"
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -48,7 +48,7 @@ cat > "$INSTALL_DIR/bridge.js" << 'BRIDGE_EOF'
 #!/usr/bin/env node
 const WebSocket = require("ws");
 const TOKEN = process.env.AN_TOKEN;
-const RELAY_URL = process.env.AN_RELAY || "wss://relay.example.com";
+const RELAY_URL = process.env.AN_RELAY || "wss://agent-native-relay.onrender.com";
 const LOCAL_URL = process.env.AN_LOCAL || "ws://127.0.0.1:18789";
 if (!TOKEN) { console.error("AN_TOKEN required"); process.exit(1); }
 let relayWs, localWs, reconnectTimer, reconnectAttempts = 0;
